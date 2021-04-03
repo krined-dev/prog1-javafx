@@ -12,16 +12,17 @@ public class ChessFX extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Pane pane = new Pane();
-        pane.setPrefSize(160,160);
+        pane.setPrefSize(400, 400);
 
-
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+        int size = 8;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 Rectangle rute = new Rectangle();
-                rute.widthProperty().bind(pane.widthProperty().divide(8));
-                rute.heightProperty().bind(pane.heightProperty().divide(8));
-                //rute.relocate(i * rute * 1.0, j * rute.getWidth());
-               
+
+                rute.heightProperty().bind(pane.heightProperty().divide(size));
+                rute.widthProperty().bind(pane.widthProperty().divide(size));
+                rute.xProperty().bind(pane.widthProperty().divide(size).multiply(i));
+                rute.yProperty().bind(pane.heightProperty().divide(size).multiply(j));
 
                 if ((i + j) % 2 == 0) {
                     rute.setFill(Color.WHITE);
@@ -29,12 +30,8 @@ public class ChessFX extends Application {
                     rute.setFill(Color.BLACK);
                 }
                 pane.getChildren().addAll(rute);
-
-
             }
         }
-
-
 
         Scene scene = new Scene(pane);
         stage.setTitle("Sjakkbrett");

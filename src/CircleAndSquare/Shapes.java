@@ -191,7 +191,7 @@ public class Shapes extends Application {
             super.setFill(c);
 
             int randomX = random.nextInt((BOX_SIZE-size)-1);
-            int randomY = random.nextInt((BOX_SIZE-size)-1);
+            int randomY = random.nextInt((BOX_SIZE-(size*2))-1);
             super.relocate(randomX, randomY);
         }
 
@@ -229,7 +229,7 @@ public class Shapes extends Application {
 
 
             int randomX = random.nextInt((BOX_SIZE-size)-1);
-            int randomY = random.nextInt((BOX_SIZE-size)-1);
+            int randomY = random.nextInt((BOX_SIZE-(size*2))-1);
             super.relocate(randomX, randomY);
         }
 

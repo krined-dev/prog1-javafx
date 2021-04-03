@@ -12,4 +12,6 @@ module MyJavaFx {
     exports Chess;
     exports CircleAndSquare;
     exports Converter;
+    exports Pendulum;
+    exports TowersOfHanoi;
 }
